@@ -45,9 +45,31 @@
 		%>
 	</table>
 	<a href="add.jsp">新增</a><br/>
+	<%
+		if (p.getCurrentPage() == p.getTotalPage()) { //尾页显示首页、上一页
+	%>
+			<a href="QueryStudentsByPage?currentPage=1">首页</a>
+			<a href="QueryStudentsByPage?currentPage=<%= p.getCurrentPage() - 1 %>">上一页</a>
+	<%
+		}
+		else if (p.getCurrentPage() == 1) { //首页显示下一页、尾页
+	%>
+			<a href="QueryStudentsByPage?currentPage=<%= p.getCurrentPage() + 1 %>">下一页</a>
+			<a href="QueryStudentsByPage?currentPage=<%= p.getTotalPage() %>">末页</a>
+	<%
+		} else { //中间页显示全部
+	%>
 	<a href="QueryStudentsByPage?currentPage=1">首页</a>
 	<a href="QueryStudentsByPage?currentPage=<%= p.getCurrentPage() - 1 %>">上一页</a>
 	<a href="QueryStudentsByPage?currentPage=<%= p.getCurrentPage() + 1 %>">下一页</a>
 	<a href="QueryStudentsByPage?currentPage=<%= p.getTotalPage() %>">末页</a>
+	<% } %>
+	<br/>
+	<select >
+		<option value="5">5</option>
+		<option value="10">10</option>
+		<option value="15">15</option>
+		<option value="20">20</option>
+	</select>
 </body>
 </html>
