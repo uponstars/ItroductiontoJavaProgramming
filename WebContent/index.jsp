@@ -10,6 +10,12 @@
 <title>学生信息列表</title>
 </head>
 <body>
+	<script type="text/javascript">
+		var myselect = document.getElementById("pageSize");
+		var index = myselect.selectedIndex;
+		var pageSize = myselect.options[index].value;
+		
+	</script>
 	<%
 		String error = (String) request.getAttribute("error");
 		if (error != null) {
@@ -65,7 +71,7 @@
 	<a href="QueryStudentsByPage?currentPage=<%= p.getTotalPage() %>">末页</a>
 	<% } %>
 	<br/>
-	<select >
+	<select id="pageSize">
 		<option value="5">5</option>
 		<option value="10">10</option>
 		<option value="15">15</option>
