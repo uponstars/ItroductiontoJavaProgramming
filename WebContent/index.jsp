@@ -16,6 +16,7 @@
 		var pageSize = myselect.options[index].value;
 		
 	</script>
+	${requestScope.error }
 	<%
 		String error = (String) request.getAttribute("error");
 		if (error != null) {
