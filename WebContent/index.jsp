@@ -10,12 +10,12 @@
 <title>学生信息列表</title>
 </head>
 <body>
-	<script type="text/javascript">
+<!-- 	<script type="text/javascript">
 		var myselect = document.getElementById("pageSize");
 		var index = myselect.selectedIndex;
 		var pageSize = myselect.options[index].value;
-	</script>
-	<c:if test="${! empty requestScope.error }">
+	</script> -->
+	<c:if test="${empty requestScope.error }">
 		<c:choose>
 			<c:when test="${requestScope.error == 'addError' }">
 				<p>增加失败！</p>
