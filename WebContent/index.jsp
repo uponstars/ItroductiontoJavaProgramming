@@ -15,6 +15,8 @@
 		var index = myselect.selectedIndex;
 		var pageSize = myselect.options[index].value;
 	</script> -->
+	<!-- 使用jstl及el标签失败，需要以后再修改 -->
+	<%-- TODO something --%>
 	<c:if test="${empty requestScope.error }">
 		<c:choose>
 			<c:when test="${requestScope.error == 'addError' }">
